@@ -19,5 +19,7 @@ from second_app import views
 
 urlpatterns = [
     path('',views.index,name='index'),
+    path('signup/',views.signup,name='signup'),
+    path('signup_/',views.signup_,name='signup_'),
     path('user_data/',views.user_data,name='user_data'),
 ]
