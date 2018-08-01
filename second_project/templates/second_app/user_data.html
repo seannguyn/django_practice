@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+  </head>
+  <body>
+    <h1> User Data </h1>
+    {% if user_info %}
+      <div class="">
+        <table>
+          <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+          </thead>
+
+          {% for user in user_info %}
+            <tr>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.password}}</td>
+            </tr>
+          {% endfor %}
+
+        </table>
+      </div>
+    {% else %}
+    <p>NO DATA</p>
+    {%endif%}
+
+  </body>
+</html>
