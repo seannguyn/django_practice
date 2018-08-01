@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MTV concepts</title>
+
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+
+  </head>
+  <body>
+    <h1>hahah..</h1>
+    {% if accessRecords %}
+    <div class="accessRecords">
+      <table>
+        <thead>
+          <th>Site name</th>
+          <th>date</th>
+        </thead>
+
+          {% for acc in accessRecords %}
+          <tr>
+            <td>{{acc.name}}</td>
+            <td>{{acc.date}}</td>
+          </tr>
+          {% endfor %}
+
+      </table>
+    </div>
+    {% else %}
+      <p> No Records..</p>
+    {% endif %}
+
+
+  </body>
+</html>
