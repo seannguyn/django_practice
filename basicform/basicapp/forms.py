@@ -10,7 +10,7 @@ class FormName(forms.Form):
     name = forms.CharField(validators=[check_for_capital,validators.MaxLengthValidator(4)])
     email = forms.EmailField()
     email_verify = forms.EmailField()
-    text = forms.CharField(widget=forms.Textarea)
+    text = forms.CharField(widget=forms.TextInput(attrs={'class' : 'myfieldclass'}))
     botcatcher = forms.CharField(required=False,widget=forms.HiddenInput)
 
 
