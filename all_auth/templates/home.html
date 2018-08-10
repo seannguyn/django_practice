@@ -1,0 +1,23 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+{% load socialaccount %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Social Signin</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1>Django Allauth Tutorial</h1>
+    {% if user.is_authenticated %}
+    <p>Welcome {{ user.username }} !!!</p>
+    {% else %}
+    <a class="btn btn-primary" href="{% provider_login_url 'github' %}">
+      <span class="fa fa-github"></span> Sign in with GitHub
+    </a>
+    {% endif %}
+  </body>
+</html>
