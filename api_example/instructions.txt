@@ -1,0 +1,25 @@
+pip install djangorestframework
+
+create application
+
+change settings: rest_framework, languages
+
+create models, migrate, Register
+
+create serializer: translate DB to json, or back
+
+class meta: model, fields
+
+views.py, from rest_framework import viewsets
+from languages.model import Language
+from languages.serializers import LanguageSerialzer
+
+# Create your views here.
+
+class LanguageView(viewsets.ModelViewSet):
+    query_set = Language.objects.all()
+    serializer_class = LanguageSerialzer
+
+  urls.py
+  from . import views
+  from rest_framework import routers
